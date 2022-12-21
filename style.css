@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.calculadora {
+    height: 60%;
+    width: 40%;
+}
+
+.calc__buttons {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
+    grid-template-areas:
+    "resultado resultado resultado resultado"
+    "resultado resultado resultado resultado"
+    "adicao subtracao multiplicacao divisao"
+        "number7 number8 number9 igual"
+        "number4 number5 number6 igual"
+        "number1 number2 number3 igual"
+        "number0 ponto apagar igual"
+    ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.resultado {
+    font-size: 3.5rem;
+    background-color: black;
+    color: white;
+    border: .06rem solid #000;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    height: 100%;
+    width: 100%;
+    text-align: right;
+    grid-area: resultado;
+    word-break: break-all;
+}
+
+button {
+    font-size: 2.8rem;
+    border: .03rem solid #000;
+    color: black;
+    background-color: white;
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+ #adicao:hover,#subtracao:hover,#multiplicacao:hover,#divisao:hover, #igual:hover, #apagar:hover, #ponto:hover {
+    background-color: rgb(87, 87, 255);
+
+} 
+
+#adicao {
+    grid-area: adicao;
+    width: 100%;
+    color: black;
+    background-color: rgb(87, 87, 87);
+
+}
+
+#subtracao {
+    grid-area: subtracao;
+    width: 100%;
+    color: black;
+    background-color: rgb(87, 87, 87);
+
+}
+
+#multiplicacao {
+    grid-area: multiplicacao;
+    width: 100%;
+    color: black;
+    background-color: rgb(87, 87, 87);
+
+}
+
+#divisao {
+    grid-area: divisao;
+    width: 100%;
+    color: black;
+    background-color: rgb(87, 87, 87);
+
+}
+
+#igual {
+
+
+    grid-area: igual;
+    width: 100%;
+    height: 100%;
+    color: black;
+    background-color: rgb(230, 92, 29);
+    border-bottom-right-radius: 1rem;
+
+}
+
+#ponto {
+    grid-area: ponto;
+    width: 100%;
+    background-color: white;
+}
+
+#apagar {
+    grid-area: apagar;
+    width: 100%;
+    background-color: white;
+
+}
+#num {
+    background-color: white;
+
+}
+#num:hover {
+    background-color: rgb(164, 164, 164);
+}
+/* grid-area numbers */
+
+#number0 {
+    grid-area: number0;
+    width: 100%;
+    border-bottom-left-radius: 1rem;
+
+}
+
+#number1 {
+    grid-area: number1;
+    width: 100%;
+}
+
+#number2 {
+    grid-area: number2;
+    width: 100%;
+}
+
+#number3 {
+    grid-area: number3;
+    width: 100%;
+}
+
+#number4 {
+    grid-area: number4;
+    width: 100%;
+}
+
+#number5 {
+    grid-area: number5;
+    width: 100%;
+}
+
+#number6 {
+    grid-area: number6;
+    width: 100%;
+}
+
+#number7 {
+    grid-area: number7;
+    width: 100%;
+}
+
+#number8 {
+    grid-area: number8;
+    width: 100%;
+}
+
+#number9 {
+    grid-area: number9;
+    width: 100%;
+}
+
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 10%;
+    font-weight: bold;
+}

@@ -1,29 +1,40 @@
 const buttons = document.querySelectorAll("button");
 let arr = [];
-let resultado = document.querySelector(".resultado");
+let resultado = "";
+let display = document.querySelector(".resultado");
+const currentOperand = "";
+const previousOperand = "";
 
 buttons.forEach(e => {
     e.addEventListener("click", i => {
-
         if (resultado.innerText == 0) {
             resultado.innerText = "";
         }
-
-        console.log(i.target.innerHTML);
-        console.log(arr);
         switch (i.target.className) {
+
             case "num":
-                resultado.innerHTML += i.target.innerHTML;
-                arr.push(resultado.innerHTML);
+                resultado = i.target.innerHTML;
+                arr.push(resultado);
+                display.innerHTML = arr.join('');
                 break;
-            case "sinal": //not number
-                resultado.innerHTML += i.target.innerHTML;
-                // if (arr.includes("+") || arr.includes("-") || arr.includes("x") || arr.includes("/")) {
-                //     resultado.innerHTML += i.target.innerHTML;
-                //     console.log("Teste");
-                // }
+            case "sinal":
+                const verificar = simbol => {
+                    if (arr.includes(simbol)) {
+                        console.log("sinal existente");
+                    } else {
+                        console.log("nao existe sinal");
+                        if (arr.length == 0) {
+                            arr.push(0);
+                        }
+                        resultado = i.target.innerHTML;
+                        arr.push(resultado);
+                        display.innerHTML = arr.join('');
+                    }
+                }
+
                 switch (i.target.innerHTML) {
                     case "+":
+                        // display.innerHTML = currentOperand + previousOperand;
                         break;
                     case "-":
 
@@ -31,26 +42,29 @@ buttons.forEach(e => {
                     case "x":
 
                         break;
-                    case "/":
+                    case "÷":
 
                         break;
 
                     case "C":
-                        resultado.innerText = "0";
+                        display.innerHTML = "0";
+                        arr = [];
                         break;
                     case ".":
-
+                        verificar(".");
                         break;
                     case "=":
-                       
+                        resultado.innerText = "";
+                        // resultado.innerText = //conta
+                        arr.forEach(num => {
+                            resultado.innerText = num;
+                        });
                         break;
 
                     default:
                         break;
                 }
-                break;
-            default:
-                break;
         }
+        console.log(arr);
     });
 });
